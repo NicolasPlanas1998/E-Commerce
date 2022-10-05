@@ -11,13 +11,14 @@ import { ProductProvider } from './components/UseContext/UseContext';
 function App() {
   return (
     <>
-      <Header/>
       <ProductProvider>
-      <Routes>
-          <Route path={"/products/:category"} element={<Products/>}/>
-          <Route path={"/aboutUs"}element={<AboutUs/>}/>
-          <Route path={"/contact"}element={<Contact/>}/>
-      </Routes>
+        <Header/>
+        <Routes>
+            {/* <Route path='/' element={ }/> */}
+            <Route path="/products/:category" element={<Products/>}/>
+            <Route path="/aboutUs" element={<AboutUs/>}/>
+            <Route path="/contact" element={<Contact/>}/>
+        </Routes>
       </ProductProvider>
     </>
     

@@ -1,27 +1,25 @@
 import React, { useContext, useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { ProductsContext } from "../UseContext/UseContext";
+import Item from "./Item";
 
 export default function Products (){
-    const {product,setProducts,getCategory} = useContext(ProductsContext)
+    const {product,getCategory,getAllProducts} = useContext(ProductsContext)
     const [currentProduct, setCurrentProduct] = useState([])
     const {category} = useParams()
 
     useEffect(()=>{
-        product.then(data=>setProducts(data))
+        getAllProducts()
     },[])
     
     useEffect(()=>{
         if(product.length && category !== "all") {
-            setCurrentProduct(getCategory(category,product))
-            console.log(category);    
+            setCurrentProduct(getCategory(category,product))   
         }else if(product.length && category === "all"){
             setCurrentProduct(product)
         }
-    },[category])
-    
-    
-    console.log(currentProduct);    
+    },[category,product])
+      
     return(
         <>
             <h1>Products</h1>
@@ -29,14 +27,17 @@ export default function Products (){
                 currentProduct.length 
                 ?
                 currentProduct.map(el=>(
-                    <>
-                        <h2>{el.name}</h2>
-                        <h2>{el.price}</h2>
-                    </>
+                   <Item 
+                        key={el.id}
+                        category={el.category}
+                        color={el.color}
+                        images={el.images}
+                        name={el.name}
+                        price={el.price}
+                        />
                 )):
                 <h2>Cargando...</h2>
             }
-        
         </>
     )
 }
