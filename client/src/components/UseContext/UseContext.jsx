@@ -25,16 +25,23 @@ export const ProductProvider =  ({children}) =>{
     }
 
     const getCategory = (category,product)=>{
-        const newProducts =  product.filter(el=> el[category] === category)
+        const newProducts =  product.filter(el=> el.category === category)
         return newProducts
     }
-    
+    const getAllCategories = (product) =>{
+        const allCategories = []
+        product.forEach(element => {
+            if(!allCategories.includes(element.category)) allCategories.push(element.category)
+        });
+        return allCategories
+    }
     
     return(
         <ProductsContext.Provider value={{
             product,
             setProducts,
             getAllProducts,
+            getAllCategories,
             setProducts,
             getCategory}}>
             {children}
