@@ -15,7 +15,7 @@ module.exports = (sequelize) => {
       allowNull: false
     },
     color:{
-      type: DataTypes.STRING,
+      type: DataTypes.ARRAY(DataTypes.STRING),
     },
     price: {
       type: DataTypes.INTEGER,
