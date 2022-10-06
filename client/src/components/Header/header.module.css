@@ -1,0 +1,45 @@
+.navBar{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: sticky;
+    position: absolute;
+    width: 100%;
+    z-index: 10;
+    background-color: rgba(0, 0, 0, 0.43);
+}
+.Link{
+    text-decoration: none;
+}
+.navBar li{
+    list-style: none;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: larger;
+    color: white;
+    padding: 10px;
+    text-decoration: none;
+}
+.navBar li:hover{
+    color: wheat;
+}
+.submenu{
+    margin: 0;
+    padding: 0;
+}
+.submenuDeploy{
+    display: none;
+    left: 0;
+    width: 100%;
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.22);
+    backdrop-filter: blur(4px);
+}
+.navBar .submenu:hover .submenuDeploy{
+    display: flex;
+    flex-direction: column;
+    background-color: rgba(0, 0, 0, 0.22);
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding: 0;
+}

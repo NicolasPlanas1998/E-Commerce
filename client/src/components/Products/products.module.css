@@ -1,0 +1,33 @@
+.containerSection{
+    position: absolute;
+    margin-top: 10%;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+}
+.containerCategories{
+    background-color: red;
+    display: flex;
+}
+.containerProducts{
+    text-align: center;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 20px;
+    height: 100vh;
+    position: absolute;
+}
+.itemContainer{
+    margin: 10px;
+    cursor: pointer;
+}
+.itemContainer img{
+    transition: 1s;
+    border-radius: 3px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+.itemContainer img:hover{
+    box-shadow: none;
+    transition: 1s;
+    
+}
