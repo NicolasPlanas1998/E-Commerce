@@ -1,18 +1,16 @@
 import React, { useContext, useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import { ProductsContext } from "../UseContext/UseContext";
-import Item from "./Item";
+import { ProductsContext } from "../UseContext/ProductContext";
+import Category from "./Category/Category";
+import Item from "./Item/Item"
 import s from "./products.module.css"
 
 export default function Products (){
-    const {product,getCategory,getAllProducts,getAllCategories} = useContext(ProductsContext)
-    const [currentProduct, setCurrentProduct] = useState([])
-    const [allCategories, setAllCategories] = useState([])
+    const {product,getCategory,getAllProducts,setCurrentProduct,currentProduct} = useContext(ProductsContext)
     const {category} = useParams()
 
-    useEffect(()=>{
+    useEffect( ()=>{
         getAllProducts()
-        setAllCategories(getAllCategories(product))
     },[])
     
     useEffect(()=>{
@@ -28,17 +26,11 @@ export default function Products (){
             <h1>Products</h1>
 
             <div className={s.containerCategories}>
-                {allCategories.length ?
-                    allCategories.map(el=>(
-                        <h4>{el}</h4>
-                    )):
-                <h2>Cargando</h2>
-                }
+                <Category/>
             </div>
 
             <div className={s.containerProducts}>
-                {
-                    currentProduct.length 
+                {currentProduct.length 
                     ?
                     currentProduct.map(el=>(
                     <Item 
@@ -48,8 +40,8 @@ export default function Products (){
                             images={el.images}
                             name={el.name}
                             price={el.price}
-                            />
-                    )):
+                            />))
+                    :
                     <h2>Cargando...</h2>
                 }
             </div>

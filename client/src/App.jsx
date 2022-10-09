@@ -6,7 +6,7 @@ import Products from './components/Products/Products';
 import AboutUs from './components/AboutUs/AboutUs';
 import Contact from './components/Contact/Contact';
 import Home from './components/Home/Home';
-import { ProductProvider } from './components/UseContext/UseContext';
+import { ProductProvider } from './components/UseContext/ProductContext';
 
 
 function App() {

@@ -1,4 +1,4 @@
-import React, {createContext, useEffect, useState} from "react";
+import React, {createContext, useState} from "react";
 
 
 export const ProductsContext = createContext([])
@@ -17,6 +17,7 @@ export const ProductsContext = createContext([])
 export const ProductProvider =  ({children}) =>{
     // const [product, setProducts] = useState<Array<Api>>([])
     const [product, setProducts] = useState([])
+    const [currentProduct, setCurrentProduct] = useState([])
 
     const getAllProducts = async () =>{
         await fetch("http://localhost:3001/product")
@@ -40,6 +41,8 @@ export const ProductProvider =  ({children}) =>{
         <ProductsContext.Provider value={{
             product,
             setProducts,
+            setCurrentProduct,
+            currentProduct,
             getAllProducts,
             getAllCategories,
             setProducts,
