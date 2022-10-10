@@ -35,6 +35,7 @@ export default function Products (){
                     currentProduct.map(el=>(
                     <Item 
                             key={el.id}
+                            id={el.id}
                             category={el.category}
                             color={el.color}
                             images={el.images}

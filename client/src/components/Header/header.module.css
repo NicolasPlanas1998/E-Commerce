@@ -1,12 +1,18 @@
+.header{
+    display: grid;
+    grid-template-columns: 90% auto;
+    position: sticky;
+    position: absolute;
+    align-items: center;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.524);
+    z-index: 10;
+
+}
 .navBar{
     display: flex;
     justify-content: center;
     align-items: center;
-    position: sticky;
-    position: absolute;
-    width: 100%;
-    z-index: 10;
-    background-color: rgba(0, 0, 0, 0.524);
 }
 .Link{
     text-decoration: none;
@@ -44,4 +50,39 @@
 .submenuDeploy .Link > li:hover{
 background-color: rgba(62, 62, 62, 0.312);
 
+}
+
+/* ------- Cart ----- */
+.cartIcon{
+    width: 27px;
+    cursor: pointer;
+}
+.modalBg{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.457);
+    height: 100vh;
+}
+.modalCart{
+    text-align: center;
+    background-color: rgb(255, 255, 255);
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    border-radius: 5px;
+    width: 300px;
+    height: 500px;
+}
+.cartItemContainer{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr auto;
+    justify-items: center;
+    align-items: center;
+    padding: 3px;
+}
+.cartItemContainer > img {
+    width: 50px;
 }
