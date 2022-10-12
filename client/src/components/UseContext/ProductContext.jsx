@@ -36,6 +36,7 @@ export const ProductProvider =  ({children}) =>{
         });
         return allCategories
     }
+
     
     return(
         <ProductsContext.Provider value={{

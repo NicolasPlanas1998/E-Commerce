@@ -41,6 +41,7 @@ export default function Products (){
                             images={el.images}
                             name={el.name}
                             price={el.price}
+                            stock={el.stock}
                             />))
                     :
                     <h2>Cargando...</h2>

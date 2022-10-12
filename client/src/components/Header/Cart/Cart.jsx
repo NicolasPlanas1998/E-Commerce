@@ -36,6 +36,7 @@ export default function Cart (){
                                 price={el.price}
                                 images={el.images}
                                 name={el.name}
+                                quantity={el.quantity}
                             />))
                         :
                         <h3>Empty cart</h3>

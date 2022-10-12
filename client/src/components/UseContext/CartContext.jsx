@@ -5,6 +5,7 @@ export const CartContext = createContext([])
 
 export const CartProvider = ({children}) =>{
     const [cart,setCart] = useState([])
+    const [quantity, setQuantity]=useState(1)
 
     const addItem =(product)=>{
         //arrglar tema cantidad
@@ -20,13 +21,15 @@ export const CartProvider = ({children}) =>{
         let total = cart.reduce((ac,el)=>{
             if(ac.price === undefined) return ac+ el.price
             return  ac.price + el.price 
-        })
+        },0)
         return total
     }
 
     return (
         <CartContext.Provider value={{
             cart,
+            quantity,
+            setQuantity,
             addItem,
             removeItem,
             totalItems
