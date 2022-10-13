@@ -34,6 +34,7 @@ export default function Cart (){
                                 key={el.id}
                                 id={el.id}    
                                 price={el.price}
+                                totalPrice= {el.totalPrice}
                                 images={el.images}
                                 name={el.name}
                                 quantity={el.quantity}

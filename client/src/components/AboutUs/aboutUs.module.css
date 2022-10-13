@@ -1,0 +1,33 @@
+.father{
+    margin-top: 30px;
+    text-align: center;
+    display: grid;
+    grid-template-columns: repeat(2,50px);
+    grid-template-rows: repeat(2,50px);
+    gap: 10px;
+    justify-content:center;
+    align-items: baseline;
+    /* align-content: center; */
+    /* align-content: center; */
+}
+.son{
+    background-color: wheat;
+    /* align-content: center; */
+    border: 1px solid black;
+}
+.fatherFlex{
+    display: flex;
+
+    text-align: center;
+    /* width: 500px; */
+    border: 2px solid red;
+    background-color: gray;
+    justify-content: center;
+    align-items: center;
+}
+.sonFlex{
+    /* width: 400px; */
+    border: 2px solid white;
+    flex-basis: 200px;
+    flex-grow: 0.2;
+}

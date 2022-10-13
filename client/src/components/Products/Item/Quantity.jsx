@@ -1,17 +1,24 @@
 import React, { useContext, useState } from "react";
-import { CartContext } from "../../UseContext/CartContext";
+
 import s from "../products.module.css"
 
-export function Quantity({stock}){
-    const {setQuantity,quantity} = useContext(CartContext)
+export function Quantity({stock,id}){
+    // const {addItem} = useContext(CartContext)
     const [itemQuantity, setItemQuantity]=useState(1)
-
 
     function handleQuntity(operation){
         if(operation === "+"){
-            if(quantity < stock) setQuantity(quantity+1)
+            if(itemQuantity < stock) {
+                let quantity = itemQuantity+1
+                localStorage.setItem(id, JSON.stringify(quantity));
+                setItemQuantity(quantity)
+            }
         }else{
-            if(quantity !== 1) setQuantity(quantity-1)            
+            if(itemQuantity !== 1) {
+                let quantity = itemQuantity-1
+                localStorage.setItem(id, JSON.stringify(quantity));
+                setItemQuantity(quantity)
+            }    
         }
 
     }

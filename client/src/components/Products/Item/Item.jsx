@@ -4,17 +4,20 @@ import { CartContext } from "../../UseContext/CartContext";
 import { Quantity } from "./Quantity";
 
 export default function Item ({name,price,images,color,category,id,stock}){
-    const {addItem,quantity,removeItem} = useContext(CartContext)
+    const {addItem,cart} = useContext(CartContext)
     const [itemInCart, setItemInCart] = useState(false)
     
-    const handleCart = (product)=>{
+    const handleCart = (id,detail)=>{
         if(itemInCart){
-            setItemInCart(false)
-            removeItem(product.id)
+            // Remplazar por que me abra el carrito y me muestre todo
         }
         else {
             setItemInCart(true)
-            addItem(product)
+            let quantity = JSON.parse(localStorage.getItem(id)) || 1
+            let totalPrice = quantity*price
+            let detailProduct = {...detail,quantity,totalPrice }
+            addItem(detailProduct)
+            localStorage.removeItem(id);
         }
     }
     return(
@@ -29,15 +32,15 @@ export default function Item ({name,price,images,color,category,id,stock}){
                         <input type="color" value={el}></input>
                     })*/}
                 <p className={s.price}>$ {price}</p> 
-                <Quantity stock={stock}/>
+                <Quantity id={id} stock={stock}/>
                     {
                         itemInCart 
                         ?
-                        <button onClick={()=>handleCart({ id,name,price,images})} className={`${s.btnAddToCart} ${s.added}`}>
+                        <button className={`${s.btnAddToCart} ${s.added}`}>
                             Added
                         </button> 
                         :
-                        <button onClick={()=>handleCart({ id,name,price,images,quantity})} className={`${s.btnAddToCart} ${s.toAdd}`}>
+                        <button onClick={()=>handleCart(id, {id,name,price,images, quantity:1})} className={`${s.btnAddToCart} ${s.toAdd}`}>
                             Add To Cart
                         </button> 
                     }

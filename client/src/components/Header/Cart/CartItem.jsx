@@ -3,10 +3,9 @@ import { CartContext } from "../../UseContext/CartContext";
 import s from '../header.module.css'
 
 
-export function CartItem ({id,price,name,images,quantity}) {
+export function CartItem ({id,price,name,images,quantity,totalPrice}) {
 
     const {removeItem} = useContext(CartContext)
-
 
     return (
         <>
@@ -15,7 +14,7 @@ export function CartItem ({id,price,name,images,quantity}) {
                 <div>
                     <p>{name} ({quantity})</p>
                 </div>
-                <p>{price}</p>
+                <p>{totalPrice}</p>
                 {/* Remplazar por icono de tacho */}
                 <button className={s.removeItem} onClick={()=>removeItem(id)}><i className="fa-solid fa-trash-can"></i></button>
             </div>

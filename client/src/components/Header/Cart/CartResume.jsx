@@ -2,17 +2,17 @@ import React, { useContext, useEffect, useState } from "react";
 import { CartContext } from "../../UseContext/CartContext";
 
 export function CartResume(){
-    const [totalPrice, setTotalPrice] = useState(0)
+    const [total, setTotal] = useState(0)
     const {cart, totalItems} = useContext(CartContext)
 
     useEffect(()=>{
-        setTotalPrice(totalItems())
+        setTotal(totalItems())
     },[cart])
 
     
     return(
         <>
-            <h3>Total {totalPrice}</h3>
+            <h3>Total {total}</h3>
             <button>Finish purchase</button>
         </>
     )
