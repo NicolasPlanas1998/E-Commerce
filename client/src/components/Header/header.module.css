@@ -1,13 +1,24 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@100;400&display=swap');
+
 .header{
-    display: grid;
-    grid-template-columns: 90% auto;
+    display: flex;
+    /* grid-template-columns: auto 1fr auto; */
+    justify-content: space-between;
     position: sticky;
     position: absolute;
     align-items: center;
-    width: 100%;
-    background-color: rgba(0, 0, 0, 0.524);
+    padding: 3px 7px;
+    width: 99%;
+    /* background-color: rgba(0, 0, 0, 0.524); */
     z-index: 10;
-
+    /* border: 2px solid red; */
+}
+.logo{
+    margin-top: 5px;
+    padding: 3px 5px;
+    border: 1px solid black;
+    font-size: 1.5rem;
+    /* border: 2px solid red; */
 }
 .navBar{
     display: flex;
@@ -20,10 +31,11 @@
 .navBar li{
     list-style: none;
     text-decoration: none;
-    font-weight: 600;
     font-size: larger;
-    color: white;
+    color: black;
+    font-family: 'Roboto Mono', monospace;
     padding: 10px;
+    font-weight: 900;
     text-decoration: none;
 }
 .navBar li:hover{
@@ -54,6 +66,7 @@ background-color: rgba(62, 62, 62, 0.312);
 
 /* ------- Cart ----- */
 .cartIcon{
+    margin-left: 5px;
     width: 27px;
     cursor: pointer;
 }

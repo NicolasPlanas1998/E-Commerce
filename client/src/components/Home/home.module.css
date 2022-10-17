@@ -1,4 +1,7 @@
-.homeContainer{
+@import url('https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@200&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@500&display=swap');
+.landingPageContainer{
     background-color: black;
     background-image: url('../../assets/bgHome.jpg');
     background-position: center;
@@ -10,6 +13,75 @@
 .title{
     position: absolute;
     margin-top: 10%;
-    font-size: 5rem;
+    font-size: 4rem;
+    bottom: 30%;
+    left: 3%;
+    color: beige;
+}
+.title > span{
+    font-family: 'Amatic SC', cursive;
     color: wheat;
+    font-size: 5rem;
+}
+
+/* --------Bounce Arrow ------------ */
+.bounceArrow
+{
+  position: relative;
+  left: 50%;
+  margin-left:-20px;
+  width: 40px;
+  height: 40px;
+  bottom: -90vh;
+  color: white;
+  font-size: 3rem;
+  cursor: pointer;
+}
+
+.bounceArrow {
+  animation: bounce 2s infinite;
+  
+}
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-30px);
+  }
+  60% {
+    transform: translateY(-15px);
+  }
+}
+/* ----------- Jeans Section------------ */
+.homePage > div{
+    text-align: center;
+    height: 100vh;
+    background: rgb(0,0,0);
+    background: linear-gradient(0deg, rgba(0,0,0,1) 0%, rgba(1, 9, 26, 0.959) 99%);
+}
+
+.sloganSection p{
+    padding-top: 3rem;
+    font-family: 'Cinzel', serif;
+    color: wheat;
+}
+.sloganSection h3{
+    font-size: 1.5rem;
+    text-transform: uppercase;
+}
+.jeansContainer{
+    color: aliceblue;
+}
+.modelsJean{
+    /* width: 100%; */
+    display: flex;
+    justify-content: center;
+
+}
+.modelsJean img{
+    width: 350px;
+    margin: 10px;
+    margin-top: 30px;
+    border-radius: 0px 40px 0 40px;
 }

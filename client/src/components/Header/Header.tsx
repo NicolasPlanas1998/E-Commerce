@@ -1,11 +1,12 @@
 import React from "react";
 import s from './header.module.css'
-import { Link } from "react-router-dom";
+import { Link } from "react-scroll";
 import Cart from "./Cart/Cart";
 
 export default function Header(){
     return(
         <div className={s.header}>
+            <h1 className={s.logo}>TRESDELSEIS</h1>
             <ul className={s.navBar}>
                 <Link className={s.Link} to={"/"}> <li>Home</li> </Link>
                 <ul className={s.submenu}>
