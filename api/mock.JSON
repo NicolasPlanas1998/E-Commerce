@@ -27,6 +27,7 @@
         "stock": 3
     },
     {
+        // * CAMBIAR FOTO *//
         "name": "T-shirt Vilka",
         "color": ["#ff0000", "2e0d0d"],
         "price": 400,
@@ -45,6 +46,7 @@
         "stock": 3
     },
     {
+        // * CAMBIAR FOTO *//
         "name": "Jacket Rio",
         "color": ["#ff0000", "2e0d0d"],
         "price": 600,
@@ -54,6 +56,7 @@
         "stock": 3
     },
     {
+        // * CAMBIAR FOTO *//
         "name": "Hoodie Estocolmo",
         "color": ["#ff0000", "2e0d0d"],
         "price": 300,
