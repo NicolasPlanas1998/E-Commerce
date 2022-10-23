@@ -1,7 +1,7 @@
 import React from "react";
-import s from './header.module.css'
+import s from '../header.module.css'
 import { Link } from "react-scroll";
-import Cart from "./Cart/Cart";
+import Cart from "../Cart/Cart";
 
 export default function Header(){
     return(

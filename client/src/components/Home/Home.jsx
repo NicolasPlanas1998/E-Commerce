@@ -1,17 +1,27 @@
-import React from "react";
+import React, { useEffect } from "react";
 import s from './home.module.css'
 import jeansWoman from '../../assets/homeJeansOne.jpg'
 import jeansMen from '../../assets/homeJeansTwo.jpg'
-
 import { Link }from 'react-scroll'
 import { Category } from "./Category";
+
+import { useDispatch } from 'react-redux'
+
 import AOS from 'aos';
 import 'aos/dist/aos.css'; 
+import { getProducts } from "../../redux/actions";
 AOS.init();
  // <Link activeClass="active" to="test1" spy={true} smooth={true} offset={50} duration={500} onSetActive={this.handleSetActive}>
 
 
 export default function Home() {
+
+    const dispatch = useDispatch()
+
+    useEffect(()=>{
+        dispatch(getProducts())
+    },[])
+
     return(
         <>
         <div className={s.landingPageContainer}>

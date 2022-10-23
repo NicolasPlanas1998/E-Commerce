@@ -1,19 +1,15 @@
-import React, { useContext, useEffect, useState } from "react";
-import { ProductsContext } from "../../UseContext/ProductContext";
+import React from "react";
+import {useDispatch,useSelector} from "react-redux"
+import { setProductsByCategory } from "../../../redux/actions";
 
 
 export default function Category (){
-    const [allCategories, setAllCategories] = useState([])
+    const dispatch = useDispatch()
+    const allCategories = useSelector(state=> state.allCategories)
+    const allProducts = useSelector(state=> state.allProducts)
     
-
-    const {product,getCategory,getAllCategories,setCurrentProduct} = useContext(ProductsContext)
-
-    useEffect(()=>{
-        setAllCategories(getAllCategories(product))
-    },[product])
-
     const handleProducts = (el)=>{
-        setCurrentProduct(getCategory(el,product))
+        dispatch(setProductsByCategory(el,allProducts))
     }
 
     return(
