@@ -8,7 +8,6 @@ export function CartResume(){
     useEffect(()=>{
         setTotal(totalItems())
     },[cart])
-
     
     return(
         <>
@@ -17,3 +16,13 @@ export function CartResume(){
         </>
     )
 }
+// REEMPLAZAR ESTO POR CODIGO ARRIBA, 
+// const totalItems = ()=>{
+//     if(cart.length === 1 ) return cart[0].totalPrice
+
+//     let total = cart.reduce((ac,el)=>{
+//         if(ac.totalPrice === undefined) return ac+ el.totalPrice
+//         return  ac.totalPrice + el.totalPrice 
+//     },0)
+//     return total
+// }

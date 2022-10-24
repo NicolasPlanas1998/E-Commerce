@@ -1,13 +1,13 @@
-import React, { useContext, useRef, useState } from "react";
+import React, { useRef, useState } from "react";
 import cartIcon from "../../../assets/cartIcon.png"
-import { CartContext } from "../../UseContext/CartContext";
 import s from "../header.module.css"
+import {useSelector} from "react-redux"
 import { CartItem } from "./CartItem";
 import { CartResume } from "./CartResume";
 
 export default function Cart (){
     const [modalCart, setModalCart ] = useState(false)
-    const {cart, removeItem} = useContext(CartContext)
+    const cart = useSelector(state=>state.cart)
     const wrapperRef = useRef()
 
     function handleClose(e){

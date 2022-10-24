@@ -1,11 +1,12 @@
 import React, { useContext, useState } from "react";
 import s from "../products.module.css"
-import { CartContext } from "../../UseContext/CartContext";
+import {useDispatch} from "react-redux"
 import { Quantity } from "./Quantity";
+import { updateCart } from "../../../redux/actions";
 
 export default function Item ({name,price,images,color,category,id,stock}){
-    const {addItem,cart} = useContext(CartContext)
     const [itemInCart, setItemInCart] = useState(false)
+    const dispatch = useDispatch()
     
     const handleCart = (id,detail)=>{
         if(itemInCart){
@@ -16,7 +17,8 @@ export default function Item ({name,price,images,color,category,id,stock}){
             let quantity = JSON.parse(localStorage.getItem(id)) || 1
             let totalPrice = quantity*price
             let detailProduct = {...detail,quantity,totalPrice }
-            addItem(detailProduct)
+            // addItem(detailProduct)
+            dispatch(updateCart(detailProduct))
             localStorage.removeItem(id);
         }
     }
